@@ -1,0 +1,19 @@
+.btn-success:hover{
+    background-color: red;
+}
+
+h1{
+    font-size: 36px!important;
+}
+
+canvas{
+    animation-name: Canimatiom;
+    animation-duration:5s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes Canimatiom{
+    from{border-style:groove;border-width: 1cm;border-color: gold;box-shadow: 20 20 20 rgb(247, 13, 255);transform:scale3d(1.345412515,1,1);}
+    to{border-style:ridge;border-width: 1cm;border-color: red;box-shadow: 20 20 20 lavender;border-radius: 10mm;transform:scale3d(1.5,1.5,1.5);}
+}
+
