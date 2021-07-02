@@ -1,5 +1,5 @@
 function preload(){
-
+    clown_nose = loadImage("https://i.postimg.cc/T2zw42fW/Clown-Nose-image2.png");
 }
 
 function setup(){
@@ -15,14 +15,26 @@ function setup(){
 
 function draw(){
     image(video,0,0,440,400);
+    //fill(220,100,90);
+    //noStroke();
+    //circle(noseX,noseY,30);
+    image(clown_nose,leftEyeX - 30,leftEyeY - 30,100,100);
 }
+var noseX ; 
+var noseY ;
+var leftEyeX ;
+var leftEyeY ;  
 function gotPoses(results){
     if(results.length > 0){
         console.log(results);
-        console.log("nose x = " + results[0].pose.nose.x);
-        console.log("nose y = " + results[0].pose.nose.y);
-        console.log("leftEyeX = " + results[0].pose.leftEye.x);
-        console.log("leftEyeY = " + results[0].pose.leftEye.y);
+        noseX =  results[0].pose.nose.x;
+        noseY =  results[0].pose.nose.y;
+        leftEyeX = results[0].pose.rightEye.x;
+        leftEyeY = results[0].pose.rightEye.y;
+        console.log("nose x = " + noseX);
+        console.log("nose y = " + noseY);
+        console.log("leftEyeX = " + leftEyeX);
+        console.log("leftEyeY = " + leftEyeY);
     }
 }
 function modelLoaded(){
